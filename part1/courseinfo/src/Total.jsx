@@ -1,5 +1,9 @@
-function Total({part1,part2,part3}){
-    return (<p>Number of exercises {part1.exercises+part2.exercises+part3.exercises}</p>)
+function Total({parts}){
+    let total=0;
+    parts.forEach(part => {
+        total+=part.exercises
+    });
+    return (<p>Number of exercises {total}</p>)
 }
 
 export default Total;

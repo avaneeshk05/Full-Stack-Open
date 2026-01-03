@@ -2,12 +2,10 @@ const Part = ({ name, exercises }) => (
   <p>{name} {exercises}</p>
 )
 
-export const Content = ({ part1, part2, part3 }) => {
-  return (
-    <div>
-      <Part name={part1.name} exercises={part1.exercises} />
-      <Part name={part2.name} exercises={part2.exercises} />
-      <Part name={part3.name} exercises={part3.exercises} />
-    </div>
-  )
+export const Content = ({ parts }) => {
+    const ans=[];
+    parts.forEach(part => {
+        ans.push(<Part name={part.name} exercises={part.exercises}/>)
+    });
+    return (ans);
 }
